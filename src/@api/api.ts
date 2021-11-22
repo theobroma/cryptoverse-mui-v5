@@ -8,6 +8,6 @@ export const API_URL = process.env.REACT_APP_API_URL as string;
 export const instance = axios.create({
   baseURL: API_URL,
   headers: {
-    'Api-Key': API_KEY,
+    'x-access-token': API_KEY,
   },
 });

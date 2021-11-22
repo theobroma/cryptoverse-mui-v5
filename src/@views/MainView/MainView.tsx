@@ -1,8 +1,9 @@
 import { Container, Grid, Paper, styled } from '@mui/material';
 import Box from '@mui/material/Box';
 import React, { useEffect } from 'react';
-// import { getAffiliateNetworksTC } from '../../@store/affiliate-networks/slice';
-// import { useAppDispatch } from '../../@store/configureStore';
+import { getAffiliateNetworksTC } from '../../@store/coins/slice';
+
+import { useAppDispatch } from '../../@store/configureStore';
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -12,11 +13,11 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const MainView: React.FC = () => {
-  // const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch();
 
-  // useEffect(() => {
-  //   dispatch(getAffiliateNetworksTC());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(getAffiliateNetworksTC());
+  }, [dispatch]);
 
   return (
     <Container maxWidth="lg">

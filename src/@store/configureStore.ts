@@ -4,7 +4,7 @@ import { createLogger } from 'redux-logger';
 import {
   affiliateNetworksReducer,
   affiliateNetworksSlice,
-} from './affiliate-networks/slice';
+} from './coins/slice';
 import { uiReducer, uiSlice } from './ui/slice';
 // import { RESET_STATE_ACTION_TYPE } from './actions/resetState';
 

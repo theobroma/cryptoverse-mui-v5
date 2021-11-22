@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { KeitaroAPI } from '../../@api/keitaro-api';
+import { CoinrankingAPI } from '../../@api/coinranking-api';
 
 const affiliateNetworksInitialState = {
   affiliateNetworks: [] as any,
@@ -20,7 +20,7 @@ export const getAffiliateNetworksTC = createAsyncThunk<any, void, any>(
     // const state = thunkAPI.getState();
     try {
       //   await waitForMe(300);
-      const res = await KeitaroAPI.getAffiliateNetworks();
+      const res = await CoinrankingAPI.getCoins();
       return res.data;
     } catch (err: any) {
       return thunkAPI.rejectWithValue(err.response.data);
