@@ -1,8 +1,8 @@
-import { Grid, Paper, styled } from '@mui/material';
+import { Container, Grid, Paper, styled } from '@mui/material';
 import Box from '@mui/material/Box';
 import React, { useEffect } from 'react';
-import { getAffiliateNetworksTC } from '../../@store/affiliate-networks/slice';
-import { useAppDispatch } from '../../@store/configureStore';
+// import { getAffiliateNetworksTC } from '../../@store/affiliate-networks/slice';
+// import { useAppDispatch } from '../../@store/configureStore';
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -12,29 +12,31 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const MainView: React.FC = () => {
-  const dispatch = useAppDispatch();
+  // const dispatch = useAppDispatch();
 
-  useEffect(() => {
-    dispatch(getAffiliateNetworksTC());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(getAffiliateNetworksTC());
+  // }, [dispatch]);
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={2}>
-        <Grid item xs={8}>
-          <Item>xs=8</Item>
+    <Container maxWidth="lg">
+      <Box sx={{ flexGrow: 1 }}>
+        <Grid container spacing={2}>
+          <Grid item xs={8}>
+            <Item>xs=8</Item>
+          </Grid>
+          <Grid item xs={4}>
+            <Item>xs=4</Item>
+          </Grid>
+          <Grid item xs={4}>
+            <Item>xs=4</Item>
+          </Grid>
+          <Grid item xs={8}>
+            <Item>xs=8</Item>
+          </Grid>
         </Grid>
-        <Grid item xs={4}>
-          <Item>xs=4</Item>
-        </Grid>
-        <Grid item xs={4}>
-          <Item>xs=4</Item>
-        </Grid>
-        <Grid item xs={8}>
-          <Item>xs=8</Item>
-        </Grid>
-      </Grid>
-    </Box>
+      </Box>
+    </Container>
   );
 };
 

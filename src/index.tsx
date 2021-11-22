@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { store } from './@store/configureStore';
 import AppThemeProvider from './@themes/theme';
-import App from './#/App';
+import { AppContainer } from './#/App';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
@@ -17,7 +17,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <AppThemeProvider>
-        <App />
+        <AppContainer />
         {/* <AppContainer /> */}
       </AppThemeProvider>
     </Provider>

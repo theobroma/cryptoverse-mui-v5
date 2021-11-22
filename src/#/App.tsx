@@ -1,11 +1,12 @@
+// https://fettblog.eu/react-types-for-children-are-broken/
 import React from 'react';
-import Container from '@mui/material/Container';
 import MainView from '../@views/MainView';
+import { GuestLayout } from './Layouts';
 
-export default function App() {
+export const AppContainer = () => {
   return (
-    <Container maxWidth="lg">
+    <GuestLayout>
       <MainView />
-    </Container>
+    </GuestLayout>
   );
-}
+};
