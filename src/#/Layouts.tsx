@@ -1,6 +1,7 @@
 import { Box } from '@mui/material';
 import React from 'react';
 import SearchAppBar from '../@components/AppBar';
+import Footer from '../@components/Footer';
 
 interface ILayout {
   // All other props
@@ -16,7 +17,7 @@ export const GuestLayout: React.FC<ILayout> = ({ children }) => {
           {children}
         </Box>
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };
