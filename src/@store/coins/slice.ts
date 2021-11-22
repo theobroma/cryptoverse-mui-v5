@@ -1,8 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { CoinrankingAPI } from '../../@api/coinranking-api';
 
-const affiliateNetworksInitialState = {
-  affiliateNetworks: [] as any,
+const coinsInitialState = {
+  data: [] as any,
   // utils
   isFetching: false,
   isSuccess: false,
@@ -10,12 +10,11 @@ const affiliateNetworksInitialState = {
   errorMessage: '',
 };
 
-export type affiliateNetworksInitialStateType =
-  typeof affiliateNetworksInitialState;
+export type coinsInitialStateType = typeof coinsInitialState;
 
 // https://stackoverflow.com/questions/67279037/the-thunkapi-getstate-method-does-not-correctly-infer-the-state-type
-export const getAffiliateNetworksTC = createAsyncThunk<any, void, any>(
-  'affiliate-networks/getAffiliateNetworks',
+export const getCoinsTC = createAsyncThunk<any, void, any>(
+  'coins/getCoins',
   async (_, thunkAPI) => {
     // const state = thunkAPI.getState();
     try {
@@ -28,24 +27,22 @@ export const getAffiliateNetworksTC = createAsyncThunk<any, void, any>(
   },
 );
 
-export const affiliateNetworksSlice = createSlice({
-  name: 'affiliate-networks',
-  initialState: affiliateNetworksInitialState,
+export const coinsSlice = createSlice({
+  name: 'coins',
+  initialState: coinsInitialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(getAffiliateNetworksTC.pending, (state) => {
+    builder.addCase(getCoinsTC.pending, (state) => {
       state.isFetching = true;
     });
-    builder.addCase(getAffiliateNetworksTC.fulfilled, (state, action) => {
-      //   if (action.payload) {
-      //     state.location = action.payload.location;
-      //     state.currentWeather = action.payload.current;
-      //     state.forecast = action.payload.forecast;
-      //   }
+    builder.addCase(getCoinsTC.fulfilled, (state, action) => {
+      if (action.payload) {
+        state.data = action.payload.data;
+      }
       state.isFetching = false;
       state.isSuccess = true;
     });
-    builder.addCase(getAffiliateNetworksTC.rejected, (state, action) => {
+    builder.addCase(getCoinsTC.rejected, (state, action) => {
       state.isFetching = false;
       state.isError = true;
       if (action.payload instanceof Error) {
@@ -55,4 +52,4 @@ export const affiliateNetworksSlice = createSlice({
   },
 });
 
-export const affiliateNetworksReducer = affiliateNetworksSlice.reducer;
+export const coinsReducer = coinsSlice.reducer;

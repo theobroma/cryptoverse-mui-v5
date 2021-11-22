@@ -1,7 +1,7 @@
 import { Container, Grid, Paper, styled } from '@mui/material';
 import Box from '@mui/material/Box';
 import React, { useEffect } from 'react';
-import { getAffiliateNetworksTC } from '../../@store/coins/slice';
+import { getCoinsTC } from '../../@store/coins/slice';
 
 import { useAppDispatch } from '../../@store/configureStore';
 
@@ -16,7 +16,7 @@ const MainView: React.FC = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(getAffiliateNetworksTC());
+    dispatch(getCoinsTC());
   }, [dispatch]);
 
   return (

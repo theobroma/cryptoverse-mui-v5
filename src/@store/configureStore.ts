@@ -1,10 +1,7 @@
 import { combineReducers, configureStore, Reducer } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import { createLogger } from 'redux-logger';
-import {
-  affiliateNetworksReducer,
-  affiliateNetworksSlice,
-} from './coins/slice';
+import { coinsReducer, coinsSlice } from './coins/slice';
 import { uiReducer, uiSlice } from './ui/slice';
 // import { RESET_STATE_ACTION_TYPE } from './actions/resetState';
 
@@ -15,7 +12,7 @@ const logger = createLogger({
 const reducers = {
   //   [modalSlice.name]: modalReducer,
   //   [pokemonApi.reducerPath]: pokemonApi.reducer,
-  [affiliateNetworksSlice.name]: affiliateNetworksReducer,
+  [coinsSlice.name]: coinsReducer,
   [uiSlice.name]: uiReducer,
 };
 
