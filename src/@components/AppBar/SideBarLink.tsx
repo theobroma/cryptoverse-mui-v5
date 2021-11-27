@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 interface Props {
   to: string;
-  icon?: React.ReactNode;
+  icon?: React.ReactElement;
   text: string;
 }
 

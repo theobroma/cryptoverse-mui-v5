@@ -11,15 +11,11 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import HomeIcon from '@mui/icons-material/Home';
 import AutoGraphIcon from '@mui/icons-material/AutoGraph';
 import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
 import { SideBarLink } from './SideBarLink';
+import ListItemLink from './ListItemLink';
 
 const drawerWidth = 240;
 
@@ -125,27 +121,6 @@ const PersistentDrawerLeft: React.FC = ({ children }) => {
           </IconButton>
         </DrawerHeader>
         <Divider />
-        {/* <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List> */}
-        {/* <Divider /> */}
-        {/* <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List> */}
         <List>
           <SideBarLink text="Home" to="/" icon={<HomeIcon />} />
           <SideBarLink
@@ -158,16 +133,20 @@ const PersistentDrawerLeft: React.FC = ({ children }) => {
             to="/exchanges"
             icon={<CurrencyExchangeIcon />}
           />
-          {/* <SideBarLink
-            text="Favourites"
-            to={ROUTES.FAVOURITES_MOVIES}
-            icon={<FavoriteIcon />}
+        </List>
+        <Divider />
+        <List aria-label="primary routes">
+          <ListItemLink to="/" primary="Home" icon={<HomeIcon />} />
+          <ListItemLink
+            to="/cryptocurrencies"
+            primary="Cryptocurrencies"
+            icon={<AutoGraphIcon />}
           />
-          <SideBarLink
-            text="Visited"
-            to={ROUTES.VISITED_MOVIES}
-            icon={<VisibilityIcon />}
-          /> */}
+          <ListItemLink
+            to="/exchanges"
+            primary="Exchanges"
+            icon={<CurrencyExchangeIcon />}
+          />
         </List>
       </Drawer>
       <Main open={open} className="HolyGrail-content">
