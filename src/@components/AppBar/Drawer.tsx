@@ -16,6 +16,10 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+import HomeIcon from '@mui/icons-material/Home';
+import AutoGraphIcon from '@mui/icons-material/AutoGraph';
+import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
+import { SideBarLink } from './SideBarLink';
 
 const drawerWidth = 240;
 
@@ -121,7 +125,7 @@ const PersistentDrawerLeft: React.FC = ({ children }) => {
           </IconButton>
         </DrawerHeader>
         <Divider />
-        <List>
+        {/* <List>
           {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>
@@ -130,9 +134,9 @@ const PersistentDrawerLeft: React.FC = ({ children }) => {
               <ListItemText primary={text} />
             </ListItem>
           ))}
-        </List>
-        <Divider />
-        <List>
+        </List> */}
+        {/* <Divider /> */}
+        {/* <List>
           {['All mail', 'Trash', 'Spam'].map((text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>
@@ -141,6 +145,29 @@ const PersistentDrawerLeft: React.FC = ({ children }) => {
               <ListItemText primary={text} />
             </ListItem>
           ))}
+        </List> */}
+        <List>
+          <SideBarLink text="Home" to="/" icon={<HomeIcon />} />
+          <SideBarLink
+            text="Cryptocurrencies"
+            to="/cryptocurrencies"
+            icon={<AutoGraphIcon />}
+          />
+          <SideBarLink
+            text="Exchanges"
+            to="/exchanges"
+            icon={<CurrencyExchangeIcon />}
+          />
+          {/* <SideBarLink
+            text="Favourites"
+            to={ROUTES.FAVOURITES_MOVIES}
+            icon={<FavoriteIcon />}
+          />
+          <SideBarLink
+            text="Visited"
+            to={ROUTES.VISITED_MOVIES}
+            icon={<VisibilityIcon />}
+          /> */}
         </List>
       </Drawer>
       <Main open={open} className="HolyGrail-content">
