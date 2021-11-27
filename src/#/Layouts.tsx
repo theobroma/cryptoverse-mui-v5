@@ -1,6 +1,7 @@
 import { Box } from '@mui/material';
 import React from 'react';
 import SearchAppBar from '../@components/AppBar';
+import PersistentDrawerLeft from '../@components/AppBar/Drawer';
 import Footer from '../@components/Footer';
 
 interface ILayout {
@@ -11,12 +12,13 @@ interface ILayout {
 export const GuestLayout: React.FC<ILayout> = ({ children }) => {
   return (
     <div className="HolyGrail">
-      <SearchAppBar />
-      <main className="HolyGrail-content">
+      <PersistentDrawerLeft>{children}</PersistentDrawerLeft>
+      {/* <SearchAppBar /> */}
+      {/* <main className="HolyGrail-content">
         <Box mt={2} mb={2}>
           {children}
         </Box>
-      </main>
+      </main> */}
       <Footer />
     </div>
   );
