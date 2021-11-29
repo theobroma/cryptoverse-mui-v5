@@ -81,7 +81,7 @@ const PersistentDrawerLeft: React.FC = ({ children }) => {
   };
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex' }} className="HolyGrail-content">
       <AppBar position="fixed" open={open}>
         <Toolbar>
           <IconButton
@@ -135,7 +135,7 @@ const PersistentDrawerLeft: React.FC = ({ children }) => {
           />
         </List>
       </Drawer>
-      <Main open={open} className="HolyGrail-content">
+      <Main open={open}>
         <DrawerHeader />
         {children}
       </Main>

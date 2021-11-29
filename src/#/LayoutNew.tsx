@@ -5,12 +5,12 @@ import Footer from '../@components/Footer';
 
 const LayoutNew = () => {
   return (
-    <>
+    <div className="HolyGrail">
       <PersistentDrawerLeft>
         <Outlet />
       </PersistentDrawerLeft>
       <Footer />
-    </>
+    </div>
   );
 };
 
