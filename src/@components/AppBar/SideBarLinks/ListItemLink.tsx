@@ -31,7 +31,18 @@ function ListItemLink(props: ListItemLinkProps) {
 
   return (
     <li>
-      <ListItem button component={renderLink}>
+      <ListItem
+        button
+        component={renderLink}
+        sx={{
+          '&.active': {
+            color: 'secondary.main',
+            '& .MuiSvgIcon-root': {
+              color: 'secondary.main',
+            },
+          },
+        }}
+      >
         {icon ? <ListItemIcon>{icon}</ListItemIcon> : null}
         <ListItemText primary={primary} />
       </ListItem>

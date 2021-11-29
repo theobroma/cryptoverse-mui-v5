@@ -121,20 +121,6 @@ const PersistentDrawerLeft: React.FC = ({ children }) => {
           </IconButton>
         </DrawerHeader>
         <Divider />
-        <List>
-          <SideBarLink text="Home" to="/" icon={<HomeIcon />} />
-          <SideBarLink
-            text="Cryptocurrencies"
-            to="/cryptocurrencies"
-            icon={<AutoGraphIcon />}
-          />
-          <SideBarLink
-            text="Exchanges"
-            to="/exchanges"
-            icon={<CurrencyExchangeIcon />}
-          />
-        </List>
-        <Divider />
         <List aria-label="primary routes">
           <ListItemLink to="/" primary="Home" icon={<HomeIcon />} />
           <ListItemLink
