@@ -1,8 +1,11 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { CoinrankingAPI } from '../../@api/coinranking-api';
+import { waitForMe } from '../../@utils/waitforme';
 
 const coinsInitialState = {
-  data: [] as any,
+  data: {
+    coins: Array(20).fill('none'),
+  } as any,
   // utils
   isFetching: false,
   isSuccess: false,
@@ -18,7 +21,7 @@ export const getCoinsTC = createAsyncThunk<any, void, any>(
   async (_, thunkAPI) => {
     // const state = thunkAPI.getState();
     try {
-      //   await waitForMe(300);
+      await waitForMe(1000);
       const res = await CoinrankingAPI.getCoins();
       return res.data;
     } catch (err: any) {
