@@ -27,7 +27,7 @@ const MainView: React.FC = () => {
           {coins.length > 0 &&
             coins.map((coin: ICurrency, idx: number) => (
               <Grid item xs={12} md={6} lg={4} key={nanoid()}>
-                {isFetching ? <AppCardSkeleton /> : null}
+                {isFetching ? <AppCardSkeleton /> : <AppCard currency={coin} />}
                 {/* {idx % 2 === 0 ? (
                   <AppCard currency={coin} />
                 ) : (
