@@ -14,8 +14,8 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import HomeIcon from '@mui/icons-material/Home';
 import AutoGraphIcon from '@mui/icons-material/AutoGraph';
 import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
-import { SideBarLink } from './SideBarLink';
-import ListItemLink from './ListItemLink';
+import { SideBarLink } from './SideBarLinks/SideBarLink';
+import ListItemLink from './SideBarLinks/ListItemLink';
 
 const drawerWidth = 240;
 

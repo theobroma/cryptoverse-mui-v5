@@ -3,7 +3,8 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import * as React from 'react';
 import {
-  Link as RouterLink,
+  // Link as RouterLink,
+  NavLink as RouterLink,
   LinkProps as RouterLinkProps,
 } from 'react-router-dom';
 
