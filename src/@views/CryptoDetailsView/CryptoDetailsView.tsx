@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import parse from 'html-react-parser';
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import LoadingPage from '../../@components/UI/LoadingPage';
 import { useGetCryptoDetailsQuery } from '../../@store/coins/crypto/cryptoApi';
 
 const CryptoDetailsView: React.FC = () => {
@@ -11,22 +12,20 @@ const CryptoDetailsView: React.FC = () => {
   const { data, isFetching } = useGetCryptoDetailsQuery(id);
   const cryptoDetails = data?.data?.coin;
 
+  if (isFetching) return <LoadingPage />;
+
   return (
     <Container maxWidth="lg">
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            {cryptoDetails && (
-              <>
-                <Typography component="h2" variant="h5">
-                  {cryptoDetails.name} ({cryptoDetails.slug}) Price
-                </Typography>
-                <Typography component="h2" variant="h5">
-                  What is {cryptoDetails.name}?
-                </Typography>
-                {parse(cryptoDetails.description)}
-              </>
-            )}
+            <Typography component="h2" variant="h5">
+              {cryptoDetails.name} ({cryptoDetails.slug}) Price
+            </Typography>
+            <Typography component="h2" variant="h5">
+              What is {cryptoDetails.name}?
+            </Typography>
+            {parse(cryptoDetails.description)}
           </Grid>
         </Grid>
       </Box>

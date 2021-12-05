@@ -21,7 +21,7 @@ export const getCoinsTC = createAsyncThunk<any, void, any>(
   async (_, thunkAPI) => {
     // const state = thunkAPI.getState();
     try {
-      await waitForMe(1000);
+      await waitForMe(300);
       const res = await CoinrankingAPI.getCoins();
       return res.data;
     } catch (err: any) {
