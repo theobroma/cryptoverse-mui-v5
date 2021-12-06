@@ -7,6 +7,8 @@ import { useParams } from 'react-router-dom';
 import AppAccordion from '../../@components/AppAccordion';
 import LoadingPage from '../../@components/UI/LoadingPage';
 import { useGetCryptoDetailsQuery } from '../../@store/coins/crypto/cryptoApi';
+import CryptoLinks from './Blocks/CryptoLinks';
+import ValueStatistics from './Blocks/ValueStatistics';
 
 const CryptoDetailsView: React.FC = () => {
   const { id } = useParams();
@@ -32,6 +34,8 @@ const CryptoDetailsView: React.FC = () => {
               />
             </Box>
           </Grid>
+          {/* ValueStatistics */}
+          <ValueStatistics cryptoDetails={cryptoDetails} />
           {/* Info */}
           <Grid item xs={12}>
             <AppAccordion
@@ -45,32 +49,7 @@ const CryptoDetailsView: React.FC = () => {
             </AppAccordion>
           </Grid>
           {/* Links */}
-          <Grid item xs={12}>
-            <AppAccordion
-              title={
-                <Typography component="h3" variant="h6">
-                  {cryptoDetails.name} Links
-                </Typography>
-              }
-            >
-              <Box sx={{ typography: 'body1', ml: 2 }}>
-                {cryptoDetails.links?.map((link: any) => (
-                  <>
-                    <span style={{ marginRight: '5px' }}>{link.type}</span>
-                    <MuiLink
-                      href={link.url}
-                      underline="hover"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {link.name}
-                    </MuiLink>
-                    <br />
-                  </>
-                ))}
-              </Box>
-            </AppAccordion>
-          </Grid>
+          <CryptoLinks cryptoDetails={cryptoDetails} />
         </Grid>
       </Box>
     </Container>

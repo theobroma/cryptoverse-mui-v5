@@ -8,3 +8,9 @@ export interface ICurrency {
   marketCap: number;
   change: number;
 }
+
+export interface CryptoLinksType {
+  name: string;
+  type: string;
+  url: string;
+}
