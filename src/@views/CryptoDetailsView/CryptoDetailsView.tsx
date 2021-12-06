@@ -19,42 +19,57 @@ const CryptoDetailsView: React.FC = () => {
     <Container maxWidth="lg">
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={2}>
+          {/* Title */}
           <Grid item xs={12}>
-            <Typography component="h2" variant="h5">
-              {cryptoDetails.name} ({cryptoDetails.slug}) Price
-            </Typography>
-            <img
-              style={{ width: '35px', height: '35px' }}
-              src={cryptoDetails.iconUrl}
-              alt={cryptoDetails.name}
-            />
-            <Typography component="h2" variant="h5">
-              What is {cryptoDetails.name}?
-            </Typography>
-            {parse(cryptoDetails.description)}
-          </Grid>
-
-          <Grid item xs={12}>
-            <AppAccordion>AppAccordion</AppAccordion>
-            <Typography component="h3" variant="h6">
-              {cryptoDetails.name} Links
-            </Typography>
-            <Box sx={{ typography: 'body1', ml: 2 }}>
-              {cryptoDetails.links?.map((link: any) => (
-                <>
-                  <span style={{ marginRight: '5px' }}>{link.type}</span>
-                  <MuiLink
-                    href={link.url}
-                    underline="hover"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {link.name}
-                  </MuiLink>
-                  <br />
-                </>
-              ))}
+            <Box sx={{ display: 'flex', justifyContent: 'flex-start' }}>
+              <Typography component="h2" variant="h5">
+                {cryptoDetails.name}
+              </Typography>
+              <img
+                style={{ width: '35px', height: '35px', marginLeft: '15px' }}
+                src={cryptoDetails.iconUrl}
+                alt={cryptoDetails.name}
+              />
             </Box>
+          </Grid>
+          {/* Info */}
+          <Grid item xs={12}>
+            <AppAccordion
+              title={
+                <Typography component="h3" variant="h6">
+                  What is {cryptoDetails.name}?
+                </Typography>
+              }
+            >
+              {parse(cryptoDetails.description)}
+            </AppAccordion>
+          </Grid>
+          {/* Links */}
+          <Grid item xs={12}>
+            <AppAccordion
+              title={
+                <Typography component="h3" variant="h6">
+                  {cryptoDetails.name} Links
+                </Typography>
+              }
+            >
+              <Box sx={{ typography: 'body1', ml: 2 }}>
+                {cryptoDetails.links?.map((link: any) => (
+                  <>
+                    <span style={{ marginRight: '5px' }}>{link.type}</span>
+                    <MuiLink
+                      href={link.url}
+                      underline="hover"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {link.name}
+                    </MuiLink>
+                    <br />
+                  </>
+                ))}
+              </Box>
+            </AppAccordion>
           </Grid>
         </Grid>
       </Box>

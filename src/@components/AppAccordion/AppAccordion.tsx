@@ -1,3 +1,4 @@
+// https://ozzie.sh/passing-icons-as-props-in-a-consistent-way-using-react
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { styled, Typography } from '@mui/material';
@@ -29,7 +30,11 @@ const AccordionSummary = styled((props: AccordionSummaryProps) => (
   },
 }));
 
-const AppAccordion: React.FC = () => {
+interface Props {
+  title?: React.ReactElement;
+}
+
+const AppAccordion: React.FC<Props> = ({ children, title }) => {
   const [expanded, setExpanded] = React.useState<string | false>(false);
 
   const handleChange =
@@ -58,15 +63,10 @@ const AppAccordion: React.FC = () => {
               fontWeight: '700',
             }}
           >
-            General settings
+            {title}
           </Typography>
         </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat.
-            Aliquam eget maximus est, id dignissim quam.
-          </Typography>
-        </AccordionDetails>
+        <AccordionDetails>{children}</AccordionDetails>
       </Accordion>
     </div>
   );
