@@ -1,9 +1,10 @@
-import { Container, Grid, Typography, Link as MuiLink } from '@mui/material';
+import { Container, Grid, Link as MuiLink, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 // import HTMLReactParser from 'html-react-parser';
 import parse from 'html-react-parser';
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import AppAccordion from '../../@components/AppAccordion';
 import LoadingPage from '../../@components/UI/LoadingPage';
 import { useGetCryptoDetailsQuery } from '../../@store/coins/crypto/cryptoApi';
 
@@ -34,6 +35,7 @@ const CryptoDetailsView: React.FC = () => {
           </Grid>
 
           <Grid item xs={12}>
+            <AppAccordion>AppAccordion</AppAccordion>
             <Typography component="h3" variant="h6">
               {cryptoDetails.name} Links
             </Typography>
