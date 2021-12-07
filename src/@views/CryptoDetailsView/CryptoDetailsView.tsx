@@ -8,6 +8,7 @@ import AppAccordion from '../../@components/AppAccordion';
 import LoadingPage from '../../@components/UI/LoadingPage';
 import { useGetCryptoDetailsQuery } from '../../@store/coins/crypto/cryptoApi';
 import CryptoLinks from './Blocks/CryptoLinks';
+import OtherStatsInfo from './Blocks/OtherStatsInfo';
 import ValueStatistics from './Blocks/ValueStatistics';
 
 const CryptoDetailsView: React.FC = () => {
@@ -36,6 +37,7 @@ const CryptoDetailsView: React.FC = () => {
           </Grid>
           {/* ValueStatistics */}
           <ValueStatistics cryptoDetails={cryptoDetails} />
+          <OtherStatsInfo cryptoDetails={cryptoDetails} />
           {/* Info */}
           <Grid item xs={12}>
             <AppAccordion
