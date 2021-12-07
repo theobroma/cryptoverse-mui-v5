@@ -38,7 +38,9 @@
         "eject": "react-scripts eject",
         "format": "prettier --write src/**/*.{js,jsx,ts,tsx,yml,json,css,scss,md}",
         "lint": "eslint --fix src/**/*.{js,jsx,ts,tsx}",
-        "serve": "serve -s build"
+        "serve": "serve -s build",
+        "predeploy": "npm run build",
+        "deploy": "netlify deploy -p"
     },
     "eslintConfig": {
         "extends": "react-app"
@@ -58,6 +60,7 @@
     "devDependencies": {
         "eslint": "^7.x",
         "eslint-config-airbnb-typescript-prettier": "^4.2.0",
+        "netlify-cli": "^8.0.16",
         "prettier": "^2.5.0"
     }
 }
