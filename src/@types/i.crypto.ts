@@ -9,8 +9,20 @@ export interface ICurrency {
   change: number;
 }
 
-export interface CryptoLinksType {
+export interface ICryptoLinks {
   name: string;
   type: string;
   url: string;
 }
+
+export type CoinHistoryType = {
+  price: string;
+  timestamp: number;
+};
+
+// ======== Responses ========
+
+export type CoinHistoryResponseType = {
+  change: number;
+  history: CoinHistoryType[];
+};

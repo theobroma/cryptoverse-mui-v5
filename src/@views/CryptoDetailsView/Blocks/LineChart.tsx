@@ -1,4 +1,5 @@
-import { Grid } from '@mui/material';
+// https://stackoverflow.com/questions/41879459/chartjs-beginatzero-min-max-doesnt-work
+import { Grid, Typography } from '@mui/material';
 import React from 'react';
 import {
   Chart as ChartJS,
@@ -24,8 +25,8 @@ ChartJS.register(
 
 interface Props {
   coinHistory: any;
-  currentPrice: any;
-  coinName: any;
+  currentPrice: string;
+  coinName: string;
 }
 
 const LineChart: React.FC<Props> = ({
@@ -60,18 +61,6 @@ const LineChart: React.FC<Props> = ({
     ],
   };
 
-  //   const options = {
-  //     scales: {
-  //       yAxes: [
-  //         {
-  //           ticks: {
-  //             beginAtZero: true,
-  //           },
-  //         },
-  //       ],
-  //     },
-  //   };
-
   const options = {
     responsive: true,
     plugins: {
@@ -83,11 +72,24 @@ const LineChart: React.FC<Props> = ({
         text: 'Chart.js Line Chart',
       },
     },
+    scales: {
+      y: {
+        beginAtZero: true,
+      },
+    },
   };
 
   return (
     <Grid item xs={12}>
-      <span>chart</span>
+      <Typography component="h3" variant="h6" sx={{ textAlign: 'center' }}>
+        {coinName} Price Chart
+      </Typography>
+      <Typography component="h3" variant="h6" sx={{ textAlign: 'center' }}>
+        Change: {coinHistory?.data?.change}%
+      </Typography>
+      <Typography component="h3" variant="h6" sx={{ textAlign: 'center' }}>
+        Current {coinName} Price: $ {currentPrice}
+      </Typography>
       <Line data={data} options={options} />
     </Grid>
   );

@@ -11,7 +11,7 @@ import {
   useGetCryptoDetailsQuery,
   useGetCryptoHistoryQuery,
 } from '../../@store/coins/crypto/cryptoApi';
-import { ChartExample } from './Blocks/ChartExample';
+// import { ChartExample } from './Blocks/ChartExample';
 import CryptoLinks from './Blocks/CryptoLinks';
 import LineChart from './Blocks/LineChart';
 import OtherStatsInfo from './Blocks/OtherStatsInfo';
