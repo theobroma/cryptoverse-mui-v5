@@ -1,11 +1,26 @@
 import { Grid } from '@mui/material';
 import React from 'react';
-import { Chart as ChartJS } from 'chart.js/auto';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
 import { Line } from 'react-chartjs-2';
-// import { Chart as ChartJS, CategoryScale } from 'chart.js';
-// import { Line } from 'react-chartjs-2';
 
-// ChartJS.register(CategoryScale);
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+);
 
 interface Props {
   coinHistory: any;
@@ -73,7 +88,7 @@ const LineChart: React.FC<Props> = ({
   return (
     <Grid item xs={12}>
       <span>chart</span>
-      {/* <Line data={data} options={options} /> */}
+      <Line data={data} options={options} />
     </Grid>
   );
 };

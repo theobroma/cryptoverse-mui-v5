@@ -33,15 +33,6 @@ export const options = {
       text: 'Chart.js Line Chart',
     },
   },
-  //   scales: {
-  //     yAxes: [
-  //       {
-  //         ticks: {
-  //           beginAtZero: true,
-  //         },
-  //       },
-  //     ],
-  //   },
 };
 
 const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
@@ -52,18 +43,14 @@ export const data = {
     {
       label: 'Dataset 1',
       data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-      //   fill: false,
       borderColor: 'rgb(255, 99, 132)',
       backgroundColor: 'rgba(255, 99, 132, 0.5)',
     },
     {
       label: 'Dataset 2',
       data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-      //   borderColor: 'rgb(53, 162, 235)',
-      //   backgroundColor: 'rgba(53, 162, 235, 0.5)',
-      fill: false,
-      backgroundColor: '#0071bd',
-      borderColor: '#0071bd',
+      borderColor: 'rgb(53, 162, 235)',
+      backgroundColor: 'rgba(53, 162, 235, 0.5)',
     },
   ],
 };

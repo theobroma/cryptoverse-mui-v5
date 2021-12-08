@@ -52,7 +52,7 @@ const CryptoDetailsView: React.FC = () => {
             currentPrice={millify(cryptoDetails.price)}
             coinName={cryptoDetails.name}
           />
-          <ChartExample />
+          {/* <ChartExample /> */}
           {/* ValueStatistics */}
           <ValueStatistics cryptoDetails={cryptoDetails} />
           <OtherStatsInfo cryptoDetails={cryptoDetails} />
