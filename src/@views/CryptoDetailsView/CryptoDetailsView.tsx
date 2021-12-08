@@ -11,6 +11,7 @@ import {
   useGetCryptoDetailsQuery,
   useGetCryptoHistoryQuery,
 } from '../../@store/coins/crypto/cryptoApi';
+import { ChartExample } from './Blocks/ChartExample';
 import CryptoLinks from './Blocks/CryptoLinks';
 import LineChart from './Blocks/LineChart';
 import OtherStatsInfo from './Blocks/OtherStatsInfo';
@@ -46,11 +47,12 @@ const CryptoDetailsView: React.FC = () => {
               />
             </Box>
           </Grid>
-          <LineChart
+          {/* <LineChart
             coinHistory={coinHistory}
             currentPrice={millify(cryptoDetails.price)}
             coinName={cryptoDetails.name}
-          />
+          /> */}
+          <ChartExample />
           {/* ValueStatistics */}
           <ValueStatistics cryptoDetails={cryptoDetails} />
           <OtherStatsInfo cryptoDetails={cryptoDetails} />
