@@ -1,5 +1,5 @@
 // https://stackoverflow.com/questions/41879459/chartjs-beginatzero-min-max-doesnt-work
-import { Grid, Typography } from '@mui/material';
+import { Grid, Paper, Typography } from '@mui/material';
 import React from 'react';
 import {
   Chart as ChartJS,
@@ -81,7 +81,11 @@ const LineChart: React.FC<Props> = ({
 
   return (
     <Grid item xs={12}>
-      <Typography component="h3" variant="h6" sx={{ textAlign: 'center' }}>
+      <Typography
+        component="h3"
+        variant="h6"
+        sx={{ marginTop: '32px', textAlign: 'center' }}
+      >
         {coinName} Price Chart
       </Typography>
       <Typography component="h3" variant="h6" sx={{ textAlign: 'center' }}>
@@ -90,7 +94,9 @@ const LineChart: React.FC<Props> = ({
       <Typography component="h3" variant="h6" sx={{ textAlign: 'center' }}>
         Current {coinName} Price: $ {currentPrice}
       </Typography>
-      <Line data={data} options={options} />
+      <Paper sx={{ marginTop: '32px', display: { xs: 'none', sm: 'block' } }}>
+        <Line data={data} options={options} />
+      </Paper>
     </Grid>
   );
 };

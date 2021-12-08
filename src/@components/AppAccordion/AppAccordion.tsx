@@ -57,7 +57,7 @@ const AppAccordion: React.FC<Props> = ({ children, title }) => {
             component="h3"
             variant="h6"
             sx={{
-              width: '33%',
+              width: '90%',
               flexShrink: 0,
               color: '#35373b',
               fontSize: '16px',

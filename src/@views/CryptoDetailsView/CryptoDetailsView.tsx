@@ -1,6 +1,5 @@
-import { Container, Grid, Link as MuiLink, Typography } from '@mui/material';
+import { Container, Grid, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
-// import HTMLReactParser from 'html-react-parser';
 import parse from 'html-react-parser';
 import millify from 'millify';
 import React, { useState } from 'react';
@@ -36,7 +35,7 @@ const CryptoDetailsView: React.FC = () => {
         <Grid container spacing={2}>
           {/* Title */}
           <Grid item xs={12}>
-            <Box sx={{ display: 'flex', justifyContent: 'flex-start' }}>
+            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
               <Typography component="h2" variant="h5">
                 {cryptoDetails.name}
               </Typography>
@@ -47,6 +46,7 @@ const CryptoDetailsView: React.FC = () => {
               />
             </Box>
           </Grid>
+
           <LineChart
             coinHistory={coinHistory}
             currentPrice={millify(cryptoDetails.price)}
