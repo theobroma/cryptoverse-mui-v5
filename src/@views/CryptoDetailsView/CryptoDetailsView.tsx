@@ -2,18 +2,29 @@ import { Container, Grid, Link as MuiLink, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 // import HTMLReactParser from 'html-react-parser';
 import parse from 'html-react-parser';
-import React from 'react';
+import millify from 'millify';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import AppAccordion from '../../@components/AppAccordion';
 import LoadingPage from '../../@components/UI/LoadingPage';
-import { useGetCryptoDetailsQuery } from '../../@store/coins/crypto/cryptoApi';
+import {
+  useGetCryptoDetailsQuery,
+  useGetCryptoHistoryQuery,
+} from '../../@store/coins/crypto/cryptoApi';
 import CryptoLinks from './Blocks/CryptoLinks';
+import LineChart from './Blocks/LineChart';
 import OtherStatsInfo from './Blocks/OtherStatsInfo';
 import ValueStatistics from './Blocks/ValueStatistics';
 
 const CryptoDetailsView: React.FC = () => {
-  const { id } = useParams();
-  const { data, isFetching } = useGetCryptoDetailsQuery(id);
+  const { id: coinId } = useParams();
+  const [timeperiod, setTimeperiod] = useState('7d');
+  const { data, isFetching } = useGetCryptoDetailsQuery(coinId);
+  const { data: coinHistory } = useGetCryptoHistoryQuery({
+    coinId,
+    timeperiod,
+  });
+
   const cryptoDetails = data?.data?.coin;
 
   if (isFetching) return <LoadingPage />;
@@ -35,6 +46,11 @@ const CryptoDetailsView: React.FC = () => {
               />
             </Box>
           </Grid>
+          <LineChart
+            coinHistory={coinHistory}
+            currentPrice={millify(cryptoDetails.price)}
+            coinName={cryptoDetails.name}
+          />
           {/* ValueStatistics */}
           <ValueStatistics cryptoDetails={cryptoDetails} />
           <OtherStatsInfo cryptoDetails={cryptoDetails} />
