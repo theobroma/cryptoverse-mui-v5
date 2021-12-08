@@ -19,6 +19,7 @@ const LineChart: React.FC<Props> = ({
   coinName,
 }) => {
   const coinPrice = [];
+
   const coinTimestamp = [];
 
   for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
@@ -72,7 +73,7 @@ const LineChart: React.FC<Props> = ({
   return (
     <Grid item xs={12}>
       <span>chart</span>
-      <Line data={data} options={options} />
+      {/* <Line data={data} options={options} /> */}
     </Grid>
   );
 };

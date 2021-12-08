@@ -3,6 +3,7 @@ import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import NumbersIcon from '@mui/icons-material/Numbers';
 import { alpha, Box, Grid, styled, Typography } from '@mui/material';
+import { nanoid } from '@reduxjs/toolkit';
 import millify from 'millify';
 import React from 'react';
 import AppAccordion from '../../../@components/AppAccordion';
@@ -54,19 +55,16 @@ const ValueStatistics: React.FC<Props> = ({ cryptoDetails }) => {
 
   return (
     <Grid item xs={12}>
-      <AppAccordion
-        title={
-          <Typography component="h3" variant="h6">
-            {cryptoDetails.name} Value Statistics
-          </Typography>
-        }
-      >
+      <AppAccordion title={`${cryptoDetails.name} Value Statistics`}>
         <p>
           An overview showing the statistics of {cryptoDetails.name}, such as
           the base and quote currency, the rank, and trading volume.
         </p>
         {stats.map(({ icon, title, value }) => (
-          <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+          <Box
+            sx={{ display: 'flex', justifyContent: 'space-between' }}
+            key={nanoid()}
+          >
             <Label>
               <LabelIcon>{icon}</LabelIcon>
               <Typography component="h5" variant="h6">

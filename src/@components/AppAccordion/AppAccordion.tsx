@@ -31,7 +31,7 @@ const AccordionSummary = styled((props: AccordionSummaryProps) => (
 }));
 
 interface Props {
-  title?: React.ReactElement;
+  title?: React.ReactElement | string;
 }
 
 const AppAccordion: React.FC<Props> = ({ children, title }) => {
@@ -54,6 +54,8 @@ const AppAccordion: React.FC<Props> = ({ children, title }) => {
           id="panel1bh-header"
         >
           <Typography
+            component="h3"
+            variant="h6"
             sx={{
               width: '33%',
               flexShrink: 0,

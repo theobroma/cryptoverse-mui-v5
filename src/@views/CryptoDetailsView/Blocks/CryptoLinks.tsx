@@ -1,4 +1,5 @@
 import { Box, Grid, Link as MuiLink, Typography } from '@mui/material';
+import { nanoid } from '@reduxjs/toolkit';
 import React from 'react';
 import AppAccordion from '../../../@components/AppAccordion';
 import { CryptoLinksType } from '../../../@types';
@@ -10,16 +11,10 @@ interface Props {
 const CryptoLinks: React.FC<Props> = ({ cryptoDetails }) => {
   return (
     <Grid item xs={12}>
-      <AppAccordion
-        title={
-          <Typography component="h3" variant="h6">
-            {cryptoDetails.name} Links
-          </Typography>
-        }
-      >
+      <AppAccordion title={`${cryptoDetails.name} Links`}>
         <Box sx={{ typography: 'body1', ml: 2 }}>
           {cryptoDetails.links?.map((link: CryptoLinksType) => (
-            <>
+            <Box key={nanoid()}>
               <span style={{ marginRight: '5px' }}>{link.type}</span>
               <MuiLink
                 href={link.url}
@@ -30,7 +25,7 @@ const CryptoLinks: React.FC<Props> = ({ cryptoDetails }) => {
                 {link.name}
               </MuiLink>
               <br />
-            </>
+            </Box>
           ))}
         </Box>
       </AppAccordion>

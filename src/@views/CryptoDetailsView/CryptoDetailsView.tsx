@@ -47,24 +47,18 @@ const CryptoDetailsView: React.FC = () => {
               />
             </Box>
           </Grid>
-          {/* <LineChart
+          <LineChart
             coinHistory={coinHistory}
             currentPrice={millify(cryptoDetails.price)}
             coinName={cryptoDetails.name}
-          /> */}
+          />
           <ChartExample />
           {/* ValueStatistics */}
           <ValueStatistics cryptoDetails={cryptoDetails} />
           <OtherStatsInfo cryptoDetails={cryptoDetails} />
           {/* Info */}
           <Grid item xs={12}>
-            <AppAccordion
-              title={
-                <Typography component="h3" variant="h6">
-                  What is {cryptoDetails.name}?
-                </Typography>
-              }
-            >
+            <AppAccordion title={`What is ${cryptoDetails.name}?`}>
               {parse(cryptoDetails.description)}
             </AppAccordion>
           </Grid>
