@@ -4,8 +4,9 @@ import ListItemText from '@mui/material/ListItemText';
 import * as React from 'react';
 import {
   // Link as RouterLink,
+  // LinkProps as RouterLinkProps,
   NavLink as RouterLink,
-  LinkProps as RouterLinkProps,
+  NavLinkProps,
 } from 'react-router-dom';
 
 interface ListItemLinkProps {
@@ -14,12 +15,12 @@ interface ListItemLinkProps {
   to: string;
 }
 
-function ListItemLink(props: ListItemLinkProps) {
+const ListItemLink = function (props: ListItemLinkProps) {
   const { icon, primary, to } = props;
 
   const renderLink = React.useMemo(
     () =>
-      React.forwardRef<HTMLAnchorElement, Omit<RouterLinkProps, 'to'>>(
+      React.forwardRef<HTMLAnchorElement, Omit<NavLinkProps, 'to'>>(
         function Link(itemProps, ref) {
           return (
             <RouterLink to={to} ref={ref} {...itemProps} role={undefined} />
@@ -48,6 +49,6 @@ function ListItemLink(props: ListItemLinkProps) {
       </ListItem>
     </li>
   );
-}
+};
 
 export default ListItemLink;
