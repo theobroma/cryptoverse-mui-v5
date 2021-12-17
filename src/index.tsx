@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { store } from './@store/configureStore';
 import AppThemeProvider from './@themes/theme';
 // import { AppContainer } from './#/App';
-import { AppContainerNew } from './#/AppContainerNew';
+import { AppContainerNew } from './@routes/AppContainerNew';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 

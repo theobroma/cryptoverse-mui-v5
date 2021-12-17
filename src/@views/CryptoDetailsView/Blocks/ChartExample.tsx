@@ -55,6 +55,6 @@ export const data = {
   ],
 };
 
-export function ChartExample() {
+export const ChartExample = () => {
   return <Line options={options} data={data} />;
-}
+};

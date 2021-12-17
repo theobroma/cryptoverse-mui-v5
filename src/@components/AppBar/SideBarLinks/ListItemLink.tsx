@@ -15,7 +15,7 @@ interface ListItemLinkProps {
   to: string;
 }
 
-const ListItemLink = function (props: ListItemLinkProps) {
+const ListItemLink = (props: ListItemLinkProps) => {
   const { icon, primary, to } = props;
 
   const renderLink = React.useMemo(

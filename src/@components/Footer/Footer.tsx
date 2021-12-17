@@ -6,7 +6,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 
-function Footer() {
+const Footer = () => {
   return (
     <AppBar position="static">
       <Container maxWidth="lg">
@@ -34,6 +34,6 @@ function Footer() {
       </Container>
     </AppBar>
   );
-}
+};
 
 export default Footer;
