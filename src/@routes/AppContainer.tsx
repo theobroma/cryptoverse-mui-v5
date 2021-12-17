@@ -3,13 +3,13 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import CryptoDetailsView from '../@views/CryptoDetailsView';
 import MainView from '../@views/MainView';
-import { LayoutNew } from './LayoutNew';
+import { AppLayout } from './AppLayout';
 
-export const AppContainerNew = () => {
+export const AppContainer = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LayoutNew />}>
+        <Route path="/" element={<AppLayout />}>
           <Route index element={<div>Home</div>} />
           <Route path="cryptocurrencies" element={<MainView />} />
           <Route path="cryptocurrencies/:id" element={<CryptoDetailsView />} />

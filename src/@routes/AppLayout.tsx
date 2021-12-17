@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 import PersistentDrawerLeft from '../@components/AppBar/Drawer';
 import Footer from '../@components/Footer';
 
-const LayoutNew = () => {
+const AppLayout = () => {
   return (
     <div className="HolyGrail">
       <PersistentDrawerLeft>
@@ -14,4 +14,4 @@ const LayoutNew = () => {
   );
 };
 
-export { LayoutNew };
+export { AppLayout };
