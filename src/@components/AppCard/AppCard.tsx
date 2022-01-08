@@ -43,7 +43,16 @@ const AppCard: React.FC<Props> = ({
   return (
     <Item>
       <CardBox1>
-        <Typography variant="h4" color="initial">
+        <Typography
+          variant="h4"
+          color="initial"
+          sx={{
+            fontSize: '24px',
+            overflow: 'hidden',
+            whiteSpace: 'nowrap',
+            textOverflow: 'ellipsis',
+          }}
+        >
           {`${rank}. ${name}`}
         </Typography>
         <img
