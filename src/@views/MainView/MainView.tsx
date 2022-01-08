@@ -31,7 +31,13 @@ const MainView: React.FC = () => {
                 {isFetching ? (
                   <AppCardSkeleton />
                 ) : (
-                  <RouterLink key={coin.id} to={`/cryptocurrencies/${coin.id}`}>
+                  <RouterLink
+                    key={coin.id}
+                    to={`/cryptocurrencies/${coin.id}`}
+                    style={{
+                      textDecoration: 'none',
+                    }}
+                  >
                     <AppCard currency={coin} />
                   </RouterLink>
                 )}
