@@ -2,9 +2,19 @@
 
 ##### React & Material UI application.
 
-Powered by [Coinranking API](https://rapidapi.com/Coinranking/api/coinranking1/).
+Powered by Coinranking API:
 
-## Quick Start
+- [RapidAPI](https://rapidapi.com/Coinranking/api/coinranking1/)
+- [Original API](https://developers.coinranking.com/api)
+
+## :fire: Built With
+
+This project was built using these technologies.
+
+- [React.js v18](https://reactjs.org/)
+- [Material UI v5](https://mui.com/)
+
+## 🛠 Quick Start
 
 ```bash
 # Install dependencies
@@ -23,7 +33,7 @@ npm run format
 npm run lint
 ```
 
-## Deploy to Netlify
+## :package: Deploy to Netlify
 
 ```bash
 # Generate a production build and deploy it
