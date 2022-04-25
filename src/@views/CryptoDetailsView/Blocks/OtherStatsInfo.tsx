@@ -48,12 +48,12 @@ const OtherStatsInfo: React.FC<Props> = ({ cryptoDetails }) => {
     },
     {
       title: 'Total Supply',
-      value: `$ ${millify(cryptoDetails.totalSupply)}`,
+      value: `$ ${millify(cryptoDetails.supply.total)}`,
       icon: <InfoIcon />,
     },
     {
       title: 'Circulating Supply',
-      value: `$ ${millify(cryptoDetails.circulatingSupply)}`,
+      value: `$ ${millify(cryptoDetails.supply.circulating)}`,
       icon: <InfoIcon />,
     },
   ];

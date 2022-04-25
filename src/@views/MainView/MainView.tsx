@@ -32,8 +32,8 @@ const MainView: React.FC = () => {
                   <AppCardSkeleton />
                 ) : (
                   <RouterLink
-                    key={coin.id}
-                    to={`/cryptocurrencies/${coin.id}`}
+                    key={coin.uuid}
+                    to={`/cryptocurrencies/${coin.uuid}`}
                     style={{
                       textDecoration: 'none',
                     }}

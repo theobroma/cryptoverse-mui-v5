@@ -93,7 +93,7 @@ const PersistentDrawerLeft: React.FC = ({ children }) => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Persistent drawer
+            Cryptoverse
           </Typography>
         </Toolbar>
       </AppBar>
