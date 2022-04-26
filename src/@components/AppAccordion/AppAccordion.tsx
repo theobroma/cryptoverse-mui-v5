@@ -31,10 +31,11 @@ const AccordionSummary = styled((props: AccordionSummaryProps) => (
 }));
 
 interface Props {
+  children: React.ReactNode;
   title?: React.ReactElement | string;
 }
 
-const AppAccordion: React.FC<Props> = ({ children, title }) => {
+const AppAccordion = ({ children, title }: Props) => {
   const [expanded, setExpanded] = React.useState<string | false>(false);
 
   const handleChange =

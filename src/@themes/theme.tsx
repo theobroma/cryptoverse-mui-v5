@@ -18,7 +18,7 @@ const theme = createTheme({
   },
 });
 
-const AppThemeProvider: React.FC = ({ children }) => {
+const AppThemeProvider = ({ children }: { children: React.ReactNode }) => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
