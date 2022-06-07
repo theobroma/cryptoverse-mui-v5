@@ -20,6 +20,7 @@ const ListItemLink = (props: ListItemLinkProps) => {
 
   const renderLink = React.useMemo(
     () =>
+      /* eslint-disable react/no-unstable-nested-components */
       React.forwardRef<HTMLAnchorElement, Omit<NavLinkProps, 'to'>>(
         function Link(itemProps, ref) {
           return (
@@ -27,6 +28,7 @@ const ListItemLink = (props: ListItemLinkProps) => {
           );
         },
       ),
+    /* eslint-enable */
     [to],
   );
 
