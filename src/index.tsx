@@ -1,6 +1,6 @@
 import './wdyr'; // <--- first import
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { store } from './@store/configureStore';
 import AppThemeProvider from './@themes/theme';
@@ -14,7 +14,9 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
-ReactDOM.render(
+const container = document.getElementById('root') as HTMLDivElement;
+const root = createRoot(container);
+root.render(
   <React.StrictMode>
     <Provider store={store}>
       <AppThemeProvider>
@@ -22,7 +24,6 @@ ReactDOM.render(
       </AppThemeProvider>
     </Provider>
   </React.StrictMode>,
-  document.getElementById('root'),
 );
 
 // If you want your app to work offline and load faster, you can change
