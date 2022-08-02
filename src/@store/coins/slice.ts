@@ -14,7 +14,7 @@ const coinsInitialState = {
   errorMessage: '',
 };
 
-export type coinsInitialStateType = typeof coinsInitialState;
+// export type coinsInitialStateType = typeof coinsInitialState;
 
 // https://stackoverflow.com/questions/67279037/the-thunkapi-getstate-method-does-not-correctly-infer-the-state-type
 export const getCoinsTC = createAsyncThunk<any, void, any>(

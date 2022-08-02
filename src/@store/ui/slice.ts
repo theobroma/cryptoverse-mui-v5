@@ -6,7 +6,7 @@ const uiInitialState = {
   theme: 'light' as ThemeColorsType,
 };
 
-export type UIInitialStateType = typeof uiInitialState;
+// export type UIInitialStateType = typeof uiInitialState;
 
 export const uiSlice = createSlice({
   name: 'ui',

@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import * as React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
 import { Container, Grid } from '@mui/material';
@@ -13,7 +12,7 @@ import { getCoinsTC } from '../../@store/coins/slice';
 import { useAppDispatch, useAppSelector } from '../../@store/configureStore';
 import type { ICurrency } from '../../@types';
 
-const MainView: React.FC = () => {
+const MainView = () => {
   const dispatch = useAppDispatch();
   const {
     data: { coins },
@@ -29,7 +28,7 @@ const MainView: React.FC = () => {
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={2}>
           {coins.length > 0 &&
-            coins.map((coin: ICurrency, idx: number) => (
+            coins.map((coin: ICurrency) => (
               <Grid item xs={12} md={6} lg={4} key={nanoid()}>
                 {isFetching ? (
                   <AppCardSkeleton />

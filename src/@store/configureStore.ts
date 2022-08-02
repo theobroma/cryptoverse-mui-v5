@@ -16,8 +16,6 @@ const logger = createLogger({
 });
 
 const reducers = {
-  //   [modalSlice.name]: modalReducer,
-  //   [pokemonApi.reducerPath]: pokemonApi.reducer,
   [coinsSlice.name]: coinsReducer,
   [cryptoApi.reducerPath]: cryptoApi.reducer,
   [uiSlice.name]: uiReducer,
@@ -25,7 +23,7 @@ const reducers = {
 
 const combinedReducer = combineReducers<typeof reducers>(reducers);
 
-export const rootReducer: Reducer<RootState> = (state, action) => {
+const rootReducer: Reducer<RootState> = (state, action) => {
   //   if (action.type === RESET_STATE_ACTION_TYPE) {
   //     state = {} as RootState;
   //   }
@@ -41,6 +39,7 @@ export const store = configureStore({
   devTools: true,
 });
 
+// eslint-disable-next-line import/no-unused-modules
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof combinedReducer>;
 
