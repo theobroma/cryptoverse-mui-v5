@@ -1,13 +1,14 @@
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import * as React from 'react';
+import type { NavLinkProps } from 'react-router-dom';
 import {
   // Link as RouterLink,
   // LinkProps as RouterLinkProps,
   NavLink as RouterLink,
-  NavLinkProps,
 } from 'react-router-dom';
+
+import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
 
 interface ListItemLinkProps {
   icon?: React.ReactElement;

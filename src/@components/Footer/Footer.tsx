@@ -1,10 +1,11 @@
+import React from 'react';
+
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { Container } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import React from 'react';
 
 const Footer = () => {
   return (

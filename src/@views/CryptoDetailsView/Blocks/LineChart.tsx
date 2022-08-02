@@ -1,17 +1,18 @@
 // https://stackoverflow.com/questions/41879459/chartjs-beginatzero-min-max-doesnt-work
-import { Grid, Paper, Typography } from '@mui/material';
 import React from 'react';
 import {
-  Chart as ChartJS,
   CategoryScale,
+  Chart as ChartJS,
+  Legend,
   LinearScale,
-  PointElement,
   LineElement,
+  PointElement,
   Title,
   Tooltip,
-  Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
+
+import { Grid, Paper, Typography } from '@mui/material';
 
 ChartJS.register(
   CategoryScale,

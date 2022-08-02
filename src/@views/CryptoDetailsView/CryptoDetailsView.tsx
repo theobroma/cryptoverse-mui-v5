@@ -1,15 +1,18 @@
-import { Container, Grid, Typography } from '@mui/material';
-import Box from '@mui/material/Box';
+import React, { useState } from 'react';
 import parse from 'html-react-parser';
 import millify from 'millify';
-import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
+
+import { Container, Grid, Typography } from '@mui/material';
+import Box from '@mui/material/Box';
+
 import AppAccordion from '../../@components/AppAccordion';
 import LoadingPage from '../../@components/UI/LoadingPage';
 import {
   useGetCryptoDetailsQuery,
   useGetCryptoHistoryQuery,
 } from '../../@store/coins/crypto/cryptoApi';
+
 // import { ChartExample } from './Blocks/ChartExample';
 import CryptoLinks from './Blocks/CryptoLinks';
 import LineChart from './Blocks/LineChart';

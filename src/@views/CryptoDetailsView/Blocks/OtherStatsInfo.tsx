@@ -1,3 +1,6 @@
+import React from 'react';
+import millify from 'millify';
+
 import AutoGraphIcon from '@mui/icons-material/AutoGraph';
 import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
@@ -5,8 +8,7 @@ import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
 import InfoIcon from '@mui/icons-material/Info';
 import { alpha, Box, Grid, styled, Typography } from '@mui/material';
 import { nanoid } from '@reduxjs/toolkit';
-import millify from 'millify';
-import React from 'react';
+
 import AppAccordion from '../../../@components/AppAccordion';
 
 const Label = styled('div')(({ theme }) => ({

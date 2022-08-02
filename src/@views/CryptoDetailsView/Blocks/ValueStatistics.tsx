@@ -1,11 +1,13 @@
+import React from 'react';
+import millify from 'millify';
+
 import BoltIcon from '@mui/icons-material/Bolt';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import NumbersIcon from '@mui/icons-material/Numbers';
 import { alpha, Box, Grid, styled, Typography } from '@mui/material';
 import { nanoid } from '@reduxjs/toolkit';
-import millify from 'millify';
-import React from 'react';
+
 import AppAccordion from '../../../@components/AppAccordion';
 
 const Label = styled('div')(({ theme }) => ({

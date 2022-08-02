@@ -1,7 +1,9 @@
-import { Box, Divider, Paper, styled, Typography } from '@mui/material';
 import React from 'react';
 import millify from 'millify';
-import { ICurrency } from '../../@types';
+
+import { Box, Divider, Paper, styled, Typography } from '@mui/material';
+
+import type { ICurrency } from '../../@types';
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,

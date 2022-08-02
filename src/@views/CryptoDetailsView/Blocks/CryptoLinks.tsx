@@ -1,8 +1,10 @@
-import { Box, Grid, Link as MuiLink, Typography } from '@mui/material';
-import { nanoid } from '@reduxjs/toolkit';
 import React from 'react';
+
+import { Box, Grid, Link as MuiLink } from '@mui/material';
+import { nanoid } from '@reduxjs/toolkit';
+
 import AppAccordion from '../../../@components/AppAccordion';
-import { ICryptoLinks } from '../../../@types';
+import type { ICryptoLinks } from '../../../@types';
 
 interface Props {
   cryptoDetails: any;
