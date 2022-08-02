@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 import { red } from '@mui/material/colors';
 import CssBaseline from '@mui/material/CssBaseline';

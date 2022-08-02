@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import * as React from 'react';
 import parse from 'html-react-parser';
 import millify from 'millify';
 import { useParams } from 'react-router-dom';

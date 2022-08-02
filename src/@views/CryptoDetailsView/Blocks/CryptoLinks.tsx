@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 import { Box, Grid, Link as MuiLink } from '@mui/material';
 import { nanoid } from '@reduxjs/toolkit';

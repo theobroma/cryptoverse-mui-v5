@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import millify from 'millify';
 
 import BoltIcon from '@mui/icons-material/Bolt';

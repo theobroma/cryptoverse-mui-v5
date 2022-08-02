@@ -1,5 +1,4 @@
 // https://stackoverflow.com/questions/69928061/struggling-with-typescript-react-eslint-and-simple-arrow-functions-components
-import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import CryptoDetailsView from '../@views/CryptoDetailsView';

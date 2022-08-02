@@ -1,5 +1,5 @@
 // https://ozzie.sh/passing-icons-as-props-in-a-consistent-way-using-react
-import React from 'react';
+import * as React from 'react';
 
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';

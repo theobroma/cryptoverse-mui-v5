@@ -1,5 +1,3 @@
-import React from 'react';
-
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { Container } from '@mui/material';
 import AppBar from '@mui/material/AppBar';

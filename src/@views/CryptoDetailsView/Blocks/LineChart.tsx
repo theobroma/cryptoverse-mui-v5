@@ -1,5 +1,5 @@
 // https://stackoverflow.com/questions/41879459/chartjs-beginatzero-min-max-doesnt-work
-import React from 'react';
+import * as React from 'react';
 import {
   CategoryScale,
   Chart as ChartJS,
