@@ -9,15 +9,17 @@ import {
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
+import type { SxProps, Theme } from '@mui/material/styles';
 
 interface ListItemLinkProps {
+  sx?: SxProps<Theme>;
   icon?: React.ReactElement;
   primary: string;
   to: string;
 }
 
 const ListItemLink = (props: ListItemLinkProps) => {
-  const { icon, primary, to } = props;
+  const { icon, primary, sx, to } = props;
 
   const renderLink = React.useMemo(
     () =>
@@ -38,14 +40,18 @@ const ListItemLink = (props: ListItemLinkProps) => {
       <ListItem
         button
         component={renderLink}
-        sx={{
-          '&.active': {
-            color: 'secondary.main',
-            '& .MuiSvgIcon-root': {
+        sx={[
+          {
+            '&.active': {
               color: 'secondary.main',
+              '& .MuiSvgIcon-root': {
+                color: 'secondary.main',
+              },
             },
           },
-        }}
+          // You cannot spread `sx` directly because `SxProps` (typeof sx) can be an array.
+          ...(Array.isArray(sx) ? sx : [sx]),
+        ]}
       >
         {icon ? <ListItemIcon>{icon}</ListItemIcon> : null}
         <ListItemText primary={primary} />
