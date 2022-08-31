@@ -11,7 +11,7 @@ const AppCardSkeleton = () => {
         }}
       >
         <Skeleton variant="text" width="50%" />
-        <Skeleton variant="circular" width={40} height={40} />
+        <Skeleton variant="circular" width={35} height={35} />
       </Box>
 
       <Skeleton variant="rectangular" width="100%" height={135} />
