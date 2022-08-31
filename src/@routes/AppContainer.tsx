@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import CryptoDetailsView from '../@views/CryptoDetailsView';
 import CryptoСurrenciesView from '../@views/CryptoСurrenciesView';
 import ExchangesView from '../@views/ExchangesView';
+import HomeView from '../@views/HomeView';
 
 import { AppLayout } from './AppLayout';
 
@@ -12,7 +13,7 @@ export const AppContainer = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<AppLayout />}>
-          <Route index element={<div>Home</div>} />
+          <Route index element={<HomeView />} />
           <Route path="cryptocurrencies" element={<CryptoСurrenciesView />} />
           <Route path="cryptocurrencies/:id" element={<CryptoDetailsView />} />
           <Route path="exchanges" element={<ExchangesView />} />
