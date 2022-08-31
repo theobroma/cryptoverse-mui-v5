@@ -3,6 +3,7 @@ import millify from 'millify';
 import { Box, Container, Grid, Typography } from '@mui/material';
 
 import LoadingPage from '../../@components/UI/LoadingPage';
+import StatsBlock from '../../@components/UI/StatsBlock';
 import { useGetCryptosQuery } from '../../@store/coins/crypto/cryptoApi';
 
 const HomeView = () => {
@@ -22,27 +23,40 @@ const HomeView = () => {
               </Typography>
             </Box>
           </Grid>
-          {/*  */}
-          <Grid item xs={12} md={6}>
-            <Box sx={{ display: 'flex', justifyContent: 'flex-start' }}>
-              <Typography component="h5" variant="h5">
-                Total Cryptocurrencies
-              </Typography>
-              <Typography component="h5" variant="h6">
-                {globalStats.total}
-              </Typography>
-            </Box>
+          {/* 1 */}
+          <Grid item xs={12} md={12}>
+            <StatsBlock
+              title="Total Cryptocurrencies"
+              value={millify(globalStats.total)}
+            />
           </Grid>
-          {/*  */}
+          {/* 2 */}
           <Grid item xs={12} md={6}>
-            <Box sx={{ display: 'flex', justifyContent: 'flex-start' }}>
-              <Typography component="h5" variant="h5">
-                Total Exchanges
-              </Typography>
-              <Typography component="h5" variant="h6">
-                {millify(globalStats.totalExchanges)}
-              </Typography>
-            </Box>
+            <StatsBlock
+              title=" Total Exchanges"
+              value={millify(globalStats.totalExchanges)}
+            />
+          </Grid>
+          {/* 3 */}
+          <Grid item xs={12} md={6}>
+            <StatsBlock
+              title="Total Market Cap:"
+              value={`$${millify(globalStats.totalMarketCap)}`}
+            />
+          </Grid>
+          {/* 4 */}
+          <Grid item xs={12} md={6}>
+            <StatsBlock
+              title="Total 24h Volume"
+              value={`$${millify(globalStats.total24hVolume)}`}
+            />
+          </Grid>
+          {/* 5  */}
+          <Grid item xs={12} md={6}>
+            <StatsBlock
+              title="Total Markets"
+              value={millify(globalStats.totalMarkets)}
+            />
           </Grid>
         </Grid>
       </Box>
