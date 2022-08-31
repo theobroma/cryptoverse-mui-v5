@@ -12,7 +12,7 @@ import { getCoinsTC } from '../../@store/coins/slice';
 import { useAppDispatch, useAppSelector } from '../../@store/configureStore';
 import type { ICurrency } from '../../@types';
 
-const MainView = () => {
+const CryptoСurrenciesView = () => {
   const dispatch = useAppDispatch();
   const {
     data: { coins },
@@ -56,4 +56,4 @@ const MainView = () => {
   );
 };
 
-export default MainView;
+export default CryptoСurrenciesView;
