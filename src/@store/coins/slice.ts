@@ -8,7 +8,7 @@ import { waitForMe } from '../../@utils/waitforme';
 
 const coinsInitialState = {
   data: {
-    coins: Array(20).fill('none'),
+    coins: Array(0),
     stats: {},
   } as CoinsResponseType['data'],
   // utils
@@ -56,7 +56,7 @@ export const coinsSlice = createSlice({
       state.isLoading = true;
       //   clear data
       state.data = {
-        coins: Array(20).fill('none'),
+        coins: Array(20).fill('none'), // for skeletons
         stats: {},
       } as CoinsResponseType['data'];
       state.isSuccess = false;
@@ -67,6 +67,18 @@ export const coinsSlice = createSlice({
       .addCase(getCoinsTC.fulfilled, (state, action) => {
         if (action.payload) {
           state.data = action.payload.data;
+          // mimic no results
+          // state.data = {
+          //   coins: [],
+          //   stats: {
+          //     total: 0,
+          //     totalCoins: 0,
+          //     totalMarkets: 0,
+          //     totalExchanges: 0,
+          //     totalMarketCap: '0',
+          //     total24hVolume: '0',
+          //   },
+          // };
         }
         state.isLoading = false;
         state.isSuccess = true;
