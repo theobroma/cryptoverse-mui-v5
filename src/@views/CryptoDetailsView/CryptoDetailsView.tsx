@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import * as React from 'react';
 import parse from 'html-react-parser';
 import millify from 'millify';
 import { useParams } from 'react-router-dom';
@@ -20,7 +19,7 @@ import LineChart from './Blocks/LineChart';
 import OtherStatsInfo from './Blocks/OtherStatsInfo';
 import ValueStatistics from './Blocks/ValueStatistics';
 
-const CryptoDetailsView: React.FC = () => {
+const CryptoDetailsView = () => {
   const { id: coinId } = useParams();
   const [timeperiod, setTimeperiod] = useState('7d');
   const { data, isFetching } = useGetCryptoDetailsQuery(coinId);
