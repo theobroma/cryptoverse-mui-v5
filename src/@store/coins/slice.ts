@@ -66,19 +66,12 @@ export const coinsSlice = createSlice({
     builder
       .addCase(getCoinsTC.fulfilled, (state, action) => {
         if (action.payload) {
-          state.data = action.payload.data;
+          // state.data = action.payload.data;
           // mimic no results
-          // state.data = {
-          //   coins: [],
-          //   stats: {
-          //     total: 0,
-          //     totalCoins: 0,
-          //     totalMarkets: 0,
-          //     totalExchanges: 0,
-          //     totalMarketCap: '0',
-          //     total24hVolume: '0',
-          //   },
-          // };
+          state.data = {
+            coins: Array(0),
+            stats: {},
+          } as CoinsResponseType['data'];
         }
         state.isLoading = false;
         state.isSuccess = true;
