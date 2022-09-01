@@ -17,6 +17,7 @@ const HomeView = () => {
   const coins = data?.data?.coins;
 
   if (isLoading) return <LoadingPage />;
+  if (isError) return <div>An error has occurred!</div>;
   return (
     <Container maxWidth="lg">
       <StatsSection globalStats={globalStats} />

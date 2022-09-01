@@ -1,4 +1,3 @@
-import type { AnyAction, PayloadAction } from '@reduxjs/toolkit';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 import { CoinrankingAPI } from '../../@api/coinranking-api';
@@ -66,26 +65,25 @@ export const coinsSlice = createSlice({
     builder
       .addCase(getCoinsTC.fulfilled, (state, action) => {
         if (action.payload) {
-          // state.data = action.payload.data;
+          state.data = action.payload.data;
           // mimic no results
-          state.data = {
-            coins: Array(0),
-            stats: {},
-          } as CoinsResponseType['data'];
+          // state.data = {
+          //   coins: Array(0),
+          //   stats: {},
+          // } as CoinsResponseType['data'];
         }
         state.isLoading = false;
         state.isSuccess = true;
       })
-      .addMatcher(isError, (state, action: PayloadAction<string>) => {
-        state.error = action.payload;
+      .addCase(getCoinsTC.rejected, (state, action) => {
+        if (action.payload) {
+          state.error = action.payload;
+        }
         state.isError = true;
         state.isLoading = false;
+        console.log('getCoinsTC.rejected');
       });
   },
 });
-
-function isError(action: AnyAction) {
-  return action.type.endsWith('rejected');
-}
 
 export const coinsReducer = coinsSlice.reducer;
