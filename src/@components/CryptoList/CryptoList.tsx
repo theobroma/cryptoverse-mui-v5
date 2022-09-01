@@ -8,16 +8,27 @@ import AppCard from '../AppCard';
 import AppCardSkeleton from '../AppCard/AppCardSkeleton';
 
 interface Props {
-  coins: any;
+  coins: CoinType[];
   isFetching: boolean;
+  error: any;
+  isError: boolean;
+  isLoading?: boolean;
+  isSuccess: boolean;
 }
 
-const CryptoList = ({ coins, isFetching }: Props) => {
+const CryptoList = ({
+  coins,
+  isFetching,
+  error,
+  isError,
+  isLoading,
+  isSuccess,
+}: Props) => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
         {coins.length > 0 &&
-          coins.map((coin: CoinType, idx: number) => (
+          coins.map((coin, idx: number) => (
             <Grid item xs={12} md={6} lg={4} key={nanoid()}>
               {isFetching ? (
                 <AppCardSkeleton />

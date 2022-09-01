@@ -11,7 +11,8 @@ import { useGetCryptosQuery } from '../../@store/coins/crypto/cryptoApi';
 import { ROUTES } from '../../@types';
 
 const HomeView = () => {
-  const { data, isFetching } = useGetCryptosQuery(10);
+  const { data, error, isError, isFetching, isLoading, isSuccess } =
+    useGetCryptosQuery(10);
   const globalStats = data?.data?.stats;
   const coins = data?.data?.coins;
 
@@ -91,7 +92,14 @@ const HomeView = () => {
           </RouterLink>
         </Box>
       </Grid>
-      <CryptoList coins={coins} isFetching={isFetching} />
+      <CryptoList
+        coins={coins}
+        isFetching={isFetching}
+        error={error}
+        isError={isError}
+        isLoading={isLoading}
+        isSuccess={isSuccess}
+      />
     </Container>
   );
 };

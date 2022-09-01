@@ -11,7 +11,10 @@ const CryptoСurrenciesView = () => {
   const dispatch = useAppDispatch();
   const {
     data: { coins },
+    error,
+    isError,
     isFetching,
+    isSuccess,
   } = useAppSelector(coinsSelector);
 
   useEffect(() => {
@@ -20,7 +23,14 @@ const CryptoСurrenciesView = () => {
 
   return (
     <Container maxWidth="lg">
-      <CryptoList coins={coins} isFetching={isFetching} />
+      <CryptoList
+        coins={coins}
+        isFetching={isFetching}
+        error={error}
+        isError={isError}
+        // isLoading={isLoading}
+        isSuccess={isSuccess}
+      />
     </Container>
   );
 };
