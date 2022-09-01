@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 import { CoinrankingAPI } from '../../@api/coinranking-api';
+import { CoinsResponseSchema } from '../../@types';
 import { waitForMe } from '../../@utils/waitforme';
 
 const coinsInitialState = {
@@ -24,6 +25,14 @@ export const getCoinsTC = createAsyncThunk<any, void, any>(
     try {
       await waitForMe(300);
       const res = await CoinrankingAPI.getCoins();
+
+      // ZOD validation
+      try {
+        CoinsResponseSchema.parse(res.data);
+      } catch (error) {
+        console.log(error);
+      }
+
       return res.data;
     } catch (err: any) {
       return thunkAPI.rejectWithValue(err.response.data);

@@ -3,7 +3,7 @@ import millify from 'millify';
 
 import { Box, Divider, Paper, styled, Typography } from '@mui/material';
 
-import type { ICurrency } from '../../@types';
+import type { CoinType } from '../../@types';
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -29,14 +29,14 @@ const CardBox2 = styled(Box)(({ theme }) => ({
 }));
 
 interface Props {
-  currency: ICurrency;
+  currency: CoinType;
 }
 
 const AppCard: React.FC<Props> = ({
   currency: {
     change = 0,
     iconUrl = '',
-    marketCap = 0,
+    marketCap = '',
     name = '',
     price = '',
     rank = 0,
@@ -66,7 +66,7 @@ const AppCard: React.FC<Props> = ({
       <Divider />
       <CardBox2>
         <p>Price: {millify(Number(price))}</p>
-        <p>Market Cap: {millify(marketCap)}</p>
+        <p>Market Cap: {millify(Number(marketCap))}</p>
         <p>Daily Change: {change}%</p>
       </CardBox2>
     </Item>
