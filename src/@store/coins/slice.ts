@@ -21,7 +21,8 @@ const coinsInitialState = {
 export const getCoinsTC = createAsyncThunk<
   CoinsResponseType,
   void,
-  { rejectValue: string }
+  // { rejectValue: string }
+  { rejectValue: any }
 >('coins/getCoins', async (_, thunkAPI) => {
   // const state = thunkAPI.getState();
   try {
@@ -37,12 +38,12 @@ export const getCoinsTC = createAsyncThunk<
 
     return res.data;
   } catch (err: any) {
-    // return thunkAPI.rejectWithValue(err.response.data);
-    return thunkAPI.rejectWithValue(
-      `Server Error fetching coins. Error: ${JSON.stringify(
-        err.response.data,
-      )}`,
-    );
+    return thunkAPI.rejectWithValue(err.response.data);
+    // return thunkAPI.rejectWithValue(
+    //   `Server Error fetching coins. Error: ${JSON.stringify(
+    //     err.response.data,
+    //   )}`,
+    // );
   }
 });
 
