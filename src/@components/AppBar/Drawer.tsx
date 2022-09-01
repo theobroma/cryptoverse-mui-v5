@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 
 import AutoGraphIcon from '@mui/icons-material/AutoGraph';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
@@ -95,9 +96,17 @@ const PersistentDrawerLeft = ({ children }: { children: React.ReactNode }) => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Cryptoverse
-          </Typography>
+          <RouterLink
+            to={{ pathname: '/' }}
+            style={{
+              color: 'white',
+              textDecoration: 'none',
+            }}
+          >
+            <Typography variant="h6" noWrap component="div">
+              Cryptoverse
+            </Typography>
+          </RouterLink>
         </Toolbar>
       </AppBar>
       <Drawer

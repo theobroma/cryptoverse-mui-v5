@@ -10,7 +10,7 @@ const ExchangesView = () => {
         <Grid container spacing={2}>
           {/* Title */}
           <Grid item xs={12}>
-            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+            <Box sx={{ display: 'flex', justifyContent: 'center', mb: 5 }}>
               <Typography component="h2" variant="h5">
                 ExchangesView
               </Typography>
