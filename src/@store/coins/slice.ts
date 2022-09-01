@@ -12,7 +12,7 @@ const coinsInitialState = {
     stats: {},
   } as CoinsResponseType['data'],
   // utils
-  isFetching: false,
+  isLoading: false,
   isSuccess: false,
   isError: false,
   error: '' as string | null,
@@ -53,7 +53,7 @@ export const coinsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getCoinsTC.pending, (state) => {
-      state.isFetching = true;
+      state.isLoading = true;
       //   clear data
       state.data = {
         coins: Array(20).fill('none'),
@@ -68,13 +68,13 @@ export const coinsSlice = createSlice({
         if (action.payload) {
           state.data = action.payload.data;
         }
-        state.isFetching = false;
+        state.isLoading = false;
         state.isSuccess = true;
       })
       .addMatcher(isError, (state, action: PayloadAction<string>) => {
         state.error = action.payload;
         state.isError = true;
-        state.isFetching = false;
+        state.isLoading = false;
       });
   },
 });

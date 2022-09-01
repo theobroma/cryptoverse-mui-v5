@@ -9,10 +9,10 @@ import AppCardSkeleton from '../AppCard/AppCardSkeleton';
 
 interface Props {
   coins: CoinType[];
-  isFetching: boolean;
+  isFetching?: boolean;
   error: any;
   isError: boolean;
-  isLoading?: boolean;
+  isLoading: boolean;
   isSuccess: boolean;
 }
 
@@ -30,7 +30,7 @@ const CryptoList = ({
         {coins.length > 0 &&
           coins.map((coin, idx: number) => (
             <Grid item xs={12} md={6} lg={4} key={nanoid()}>
-              {isFetching ? (
+              {isLoading ? (
                 <AppCardSkeleton />
               ) : (
                 <RouterLink

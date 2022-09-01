@@ -13,7 +13,8 @@ const CryptoСurrenciesView = () => {
     data: { coins },
     error,
     isError,
-    isFetching,
+    // isFetching,
+    isLoading,
     isSuccess,
   } = useAppSelector(coinsSelector);
 
@@ -25,10 +26,10 @@ const CryptoСurrenciesView = () => {
     <Container maxWidth="lg">
       <CryptoList
         coins={coins}
-        isFetching={isFetching}
+        // isFetching={isFetching}
         error={error}
         isError={isError}
-        // isLoading={isLoading}
+        isLoading={isLoading}
         isSuccess={isSuccess}
       />
     </Container>

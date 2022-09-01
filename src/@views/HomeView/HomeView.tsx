@@ -16,7 +16,7 @@ const HomeView = () => {
   const globalStats = data?.data?.stats;
   const coins = data?.data?.coins;
 
-  if (isFetching) return <LoadingPage />;
+  if (isLoading) return <LoadingPage />;
   return (
     <Container maxWidth="lg">
       <Box sx={{ flexGrow: 1 }}>
