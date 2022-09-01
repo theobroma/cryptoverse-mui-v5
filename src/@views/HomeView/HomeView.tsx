@@ -8,7 +8,7 @@ import LoadingPage from '../../@components/UI/LoadingPage';
 import { useGetCryptosQuery } from '../../@store/coins/crypto/cryptoApi';
 import { ROUTES } from '../../@types';
 
-import StatsSection from './StatsSection';
+// import StatsSection from './StatsSection';
 
 const HomeView = () => {
   const { data, error, isError, isFetching, isLoading, isSuccess } =
@@ -17,10 +17,10 @@ const HomeView = () => {
   const coins = data?.data?.coins;
 
   if (isLoading) return <LoadingPage />;
-  if (isError) return <div>An error has occurred!</div>;
+  // if (isError) return <div>An error has occurred!</div>;
   return (
     <Container maxWidth="lg">
-      <StatsSection globalStats={globalStats} />
+      {/* <StatsSection globalStats={globalStats} /> */}
       {/* / Stats */}
       <Grid item xs={12}>
         <Box

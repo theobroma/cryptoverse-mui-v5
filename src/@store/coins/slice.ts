@@ -81,7 +81,7 @@ export const coinsSlice = createSlice({
         }
         state.isError = true;
         state.isLoading = false;
-        console.log('getCoinsTC.rejected');
+        // console.log('getCoinsTC.rejected');
       });
   },
 });

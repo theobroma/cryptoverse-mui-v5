@@ -6,6 +6,7 @@ import { nanoid } from '@reduxjs/toolkit';
 import type { CoinType } from '../../@types';
 import AppCard from '../AppCard';
 import AppCardSkeleton from '../AppCard/AppCardSkeleton';
+import AppError from '../UI/AppError/AppError';
 
 interface Props {
   coins: CoinType[];
@@ -25,6 +26,7 @@ const CryptoList = ({
   isSuccess,
 }: Props) => {
   // console.log('coins.length :>> ', coins.length);
+  // if (isError) return <div>An error has occurred!</div>;
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
@@ -65,9 +67,7 @@ const CryptoList = ({
       {/* error */}
       {!!isError && (
         <Grid item xs={12}>
-          <Stack sx={{ width: '100%' }} spacing={2}>
-            <Alert severity="error">{error}</Alert>
-          </Stack>
+          <AppError error={error} />
         </Grid>
       )}
     </Box>
