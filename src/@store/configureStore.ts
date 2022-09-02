@@ -3,8 +3,12 @@ import type { TypedUseSelectorHook } from 'react-redux';
 import { useDispatch, useSelector } from 'react-redux';
 import { createLogger } from 'redux-logger';
 
-import type { Reducer } from '@reduxjs/toolkit';
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import type { Middleware, MiddlewareAPI, Reducer } from '@reduxjs/toolkit';
+import {
+  combineReducers,
+  configureStore,
+  isRejectedWithValue,
+} from '@reduxjs/toolkit';
 
 import { cryptoApi } from './coins/crypto/cryptoApi';
 import { coinsReducer, coinsSlice } from './coins/slice';
@@ -14,6 +18,17 @@ import { uiReducer, uiSlice } from './ui/slice';
 const logger = createLogger({
   collapsed: true,
 });
+
+const rtkQueryErrorLogger: Middleware =
+  (api: MiddlewareAPI) => (next) => (action) => {
+    // RTK Query uses `createAsyncThunk` from redux-toolkit under the hood, so we're able to utilize these matchers!
+    if (isRejectedWithValue(action)) {
+      console.warn('We got a rejected action!');
+      // toast.warn({ title: 'Async error!', message: action.error.data.message });
+    }
+
+    return next(action);
+  };
 
 const reducers = {
   [coinsSlice.name]: coinsReducer,
@@ -34,7 +49,11 @@ const rootReducer: Reducer<RootState> = (state, action) => {
 export const store = configureStore({
   reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat([logger, cryptoApi.middleware]),
+    getDefaultMiddleware().concat([
+      logger,
+      rtkQueryErrorLogger,
+      cryptoApi.middleware,
+    ]),
   // devTools: process.env.NODE_ENV === 'development',
   devTools: true,
 });
