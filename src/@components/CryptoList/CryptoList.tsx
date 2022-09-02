@@ -31,7 +31,7 @@ const CryptoList = ({
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
         {/* results */}
-        {!isError &&
+        {!!isSuccess &&
           coins.length > 0 &&
           coins.map((coin, idx: number) => (
             <Grid item xs={12} md={6} lg={4} key={nanoid()}>
@@ -55,21 +55,21 @@ const CryptoList = ({
             )} */}
             </Grid>
           ))}
+        {/* no results */}
+        {!!isSuccess && coins.length === 0 && (
+          <Grid item xs={12}>
+            <Stack sx={{ width: '100%' }} spacing={2}>
+              <Alert severity="warning">There is no data</Alert>
+            </Stack>
+          </Grid>
+        )}
+        {/* error */}
+        {!!isError && (
+          <Grid item xs={12}>
+            <AppError error={error} />
+          </Grid>
+        )}
       </Grid>
-      {/* no results */}
-      {!!isSuccess && coins.length === 0 && (
-        <Grid item xs={12}>
-          <Stack sx={{ width: '100%' }} spacing={2}>
-            <Alert severity="warning">There is no data</Alert>
-          </Stack>
-        </Grid>
-      )}
-      {/* error */}
-      {!!isError && (
-        <Grid item xs={12}>
-          <AppError error={error} />
-        </Grid>
-      )}
     </Box>
   );
 };

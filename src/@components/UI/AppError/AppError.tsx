@@ -7,7 +7,7 @@ type Props = {
 const AppError = ({ error }: Props) => {
   let err = '';
 
-  console.log('typeof error', typeof error);
+  // console.log('typeof error', typeof error);
 
   if (typeof error === 'string') {
     err = error;
