@@ -31,7 +31,7 @@ const CryptoList = ({
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
         {/* results */}
-        {!!isSuccess &&
+        {!isError &&
           coins.length > 0 &&
           coins.map((coin, idx: number) => (
             <Grid item xs={12} md={6} lg={4} key={nanoid()}>
