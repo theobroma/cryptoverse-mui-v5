@@ -17,7 +17,7 @@ interface Props {
   isSuccess: boolean;
 }
 
-const CryptoList = ({
+const CryptoListClassicCondition = ({
   coins,
   isFetching,
   error,
@@ -74,4 +74,4 @@ const CryptoList = ({
   );
 };
 
-export default CryptoList;
+export default CryptoListClassicCondition;
