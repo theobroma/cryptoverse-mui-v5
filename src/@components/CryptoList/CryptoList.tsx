@@ -10,16 +10,16 @@ import AppError from '../UI/AppError/AppError';
 
 interface Props {
   coins: CoinType[];
-  isFetching?: boolean;
+  // isFetching?: boolean;
   error: any;
   isError: boolean;
   isLoading: boolean;
   isSuccess: boolean;
 }
 
-const CryptoListClassicCondition = ({
+const CryptoList = ({
   coins,
-  isFetching,
+  // isFetching,
   error,
   isError,
   isLoading,
@@ -74,4 +74,4 @@ const CryptoListClassicCondition = ({
   );
 };
 
-export default CryptoListClassicCondition;
+export default CryptoList;

@@ -56,7 +56,7 @@ const HomeView = () => {
       </Grid>
       <CryptoList
         coins={coins}
-        isFetching={isFetching}
+        // isFetching={isFetching}
         error={error}
         isError={isError}
         isLoading={isLoading}

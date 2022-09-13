@@ -1,3 +1,7 @@
+// just for testing react-if
+//  TypeError in "Then"
+
+import { Else, If, Then } from 'react-if';
 import { Link as RouterLink } from 'react-router-dom';
 
 import { Alert, Box, Grid, Stack } from '@mui/material';
@@ -10,7 +14,7 @@ import AppError from '../UI/AppError/AppError';
 
 interface Props {
   coins: CoinType[];
-  isFetching?: boolean;
+  //   isFetching?: boolean;
   error: any;
   isError: boolean;
   isLoading: boolean;
@@ -19,7 +23,7 @@ interface Props {
 
 const CryptoListReactIfCondition = ({
   coins,
-  isFetching,
+  //   isFetching,
   error,
   isError,
   isLoading,
@@ -30,45 +34,53 @@ const CryptoListReactIfCondition = ({
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
-        {/* results */}
-        {!isError &&
-          coins.length > 0 &&
-          coins.map((coin, idx: number) => (
-            <Grid item xs={12} md={6} lg={4} key={nanoid()}>
-              {isLoading ? (
-                <AppCardSkeleton />
-              ) : (
-                <RouterLink
-                  key={coin.uuid}
-                  to={`/cryptocurrencies/${coin.uuid}`}
-                  style={{
-                    textDecoration: 'none',
-                  }}
-                >
-                  <AppCard currency={coin} />
-                </RouterLink>
-              )}
-              {/* {idx % 2 === 0 ? (
+        <If condition={!isError && !!isSuccess && coins.length > 0}>
+          {/* results */}
+          <Then>
+            {coins.map((coin, idx: number) => (
+              <Grid item xs={12} md={6} lg={4} key={nanoid()}>
+                {isLoading ? (
+                  <AppCardSkeleton />
+                ) : (
+                  <RouterLink
+                    key={coin.uuid}
+                    to={`/cryptocurrencies/${coin.uuid}`}
+                    style={{
+                      textDecoration: 'none',
+                    }}
+                  >
+                    <AppCard currency={coin} />
+                  </RouterLink>
+                )}
+                {/* {idx % 2 === 0 ? (
               <AppCard currency={coin} />
             ) : (
               <AppCardSkeleton />
             )} */}
-            </Grid>
-          ))}
-        {/* no results */}
-        {!!isSuccess && coins.length === 0 && (
-          <Grid item xs={12}>
-            <Stack sx={{ width: '100%' }} spacing={2}>
-              <Alert severity="warning">There is no data</Alert>
-            </Stack>
-          </Grid>
-        )}
-        {/* error */}
-        {!!isError && (
-          <Grid item xs={12}>
-            <AppError error={error} />
-          </Grid>
-        )}
+              </Grid>
+            ))}
+          </Then>
+          {/* no results */}
+          <Else>
+            <If condition={!!isSuccess && coins.length === 0}>
+              <Then>
+                <Grid item xs={12}>
+                  <Stack sx={{ width: '100%' }} spacing={2}>
+                    <Alert severity="warning">There is no data</Alert>
+                  </Stack>
+                </Grid>
+              </Then>
+            </If>
+            {/* error */}
+            <If condition={isError}>
+              <Then>
+                <Grid item xs={12}>
+                  <AppError error={error} />
+                </Grid>
+              </Then>
+            </If>
+          </Else>
+        </If>
       </Grid>
     </Box>
   );
