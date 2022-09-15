@@ -5,7 +5,7 @@ import { Box, Divider, Paper, styled, Typography } from '@mui/material';
 
 import type { CoinType } from '../../@types';
 
-const Item = styled(Paper)(({ theme }) => ({
+export const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
   //   padding: theme.spacing(1),
   padding: 0,
@@ -13,19 +13,21 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-const CardBox1 = styled(Box)(({ theme }) => ({
+export const CardBox1 = styled(Box)(({ theme }) => ({
   ...theme.typography.body2,
   padding: theme.spacing(1),
   color: theme.palette.text.secondary,
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
+  minHeight: '51px', // for skeleton sync
 }));
 
-const CardBox2 = styled(Box)(({ theme }) => ({
+export const CardBox2 = styled(Box)(({ theme }) => ({
   ...theme.typography.body2,
   padding: theme.spacing(1),
   color: theme.palette.text.secondary,
+  minHeight: '132px', // for skeleton sync
 }));
 
 interface Props {

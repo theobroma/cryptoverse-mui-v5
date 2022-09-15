@@ -1,1 +1,1 @@
-export { default } from './AppCardSkeleton';
+export { default } from './AppCardSkeleton2';
