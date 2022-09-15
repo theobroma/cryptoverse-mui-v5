@@ -12,7 +12,7 @@ const AppCardSkeleton2 = () => {
       <Divider />
       <CardBox2>
         <p>
-          <Skeleton variant="text" width="30%" height={20} />
+          <Skeleton variant="text" width="25%" height={20} />
         </p>
         <p>
           <Skeleton variant="text" width="37%" height={20} />

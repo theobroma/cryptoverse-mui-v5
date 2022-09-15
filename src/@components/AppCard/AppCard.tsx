@@ -50,14 +50,22 @@ const AppCard: React.FC<Props> = ({
         <Typography
           variant="h4"
           color="initial"
-          sx={{
-            fontSize: '24px',
-            overflow: 'hidden',
-            whiteSpace: 'nowrap',
-            textOverflow: 'ellipsis',
-          }}
+          sx={(theme) => ({
+            fontSize: '18px',
+            [theme.breakpoints.up('md')]: {
+              fontSize: '24px',
+            },
+          })}
+          // sx={{
+          //   fontSize: '24px',
+          //   overflow: 'hidden',
+          //   whiteSpace: 'nowrap',
+          //   textOverflow: 'ellipsis',
+          // }}
         >
-          {`${rank}. ${name}`}
+          {/* {`${rank}. ${name}`} */}
+          {/* truncate text */}
+          {`${rank}.`} {name.substring(0, 20)} {name.length >= 20 && '...'}
         </Typography>
         <img
           style={{ width: '35px', height: '35px' }}
