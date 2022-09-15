@@ -48,6 +48,7 @@ const CryptoList = ({
                   <AppCard currency={coin} />
                 </RouterLink>
               )}
+              {/* DON'T delete. usefull for skeleton debug */}
               {/* {idx % 2 === 0 ? (
               <AppCard currency={coin} />
             ) : (
