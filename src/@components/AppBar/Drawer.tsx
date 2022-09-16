@@ -7,69 +7,17 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
 import HomeIcon from '@mui/icons-material/Home';
 import MenuIcon from '@mui/icons-material/Menu';
-import type { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
-import MuiAppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
-import { styled, useTheme } from '@mui/material/styles';
+import { useTheme } from '@mui/material/styles';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
+import { AppBar, DrawerHeader, drawerWidth, Main } from './Drawer.styled';
 import ListItemLink from './ListItemLink';
-
-const drawerWidth = 240;
-
-const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
-  open?: boolean;
-}>(({ theme, open }) => ({
-  flexGrow: 1,
-  padding: theme.spacing(3),
-  transition: theme.transitions.create('margin', {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-  marginLeft: `-${drawerWidth}px`,
-  ...(open && {
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-    marginLeft: 0,
-  }),
-}));
-
-interface AppBarProps extends MuiAppBarProps {
-  open?: boolean;
-}
-
-const AppBar = styled(MuiAppBar, {
-  shouldForwardProp: (prop) => prop !== 'open',
-})<AppBarProps>(({ theme, open }) => ({
-  transition: theme.transitions.create(['margin', 'width'], {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-  ...(open && {
-    width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: `${drawerWidth}px`,
-    transition: theme.transitions.create(['margin', 'width'], {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  }),
-}));
-
-const DrawerHeader = styled('div')(({ theme }) => ({
-  display: 'flex',
-  alignItems: 'center',
-  padding: theme.spacing(0, 1),
-  // necessary for content to be below app bar
-  ...theme.mixins.toolbar,
-  justifyContent: 'flex-end',
-}));
 
 const PersistentDrawerLeft = ({ children }: { children: React.ReactNode }) => {
   const theme = useTheme();
