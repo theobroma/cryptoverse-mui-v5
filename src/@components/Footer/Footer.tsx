@@ -17,6 +17,8 @@ const Footer = () => {
         <SocialLink
           href="https://github.com/theobroma/"
           icon={<GitHubIcon />}
+          data-testid="github-link"
+          aria-label="Github Link"
         />
         <SocialLink href="https://t.me/theobroma222" icon={<TelegramIcon />} />
         <SocialLink

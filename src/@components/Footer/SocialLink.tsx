@@ -7,12 +7,13 @@ type Props = {
   icon: React.ReactElement;
 };
 
-const SocialLink = ({ href, icon }: Props) => {
+const SocialLink = ({ href, icon, ...rest }: Props) => {
   return (
     <MuiLink
       href={href}
       target="_blank"
       sx={{ textDecoration: 'none', cursor: 'pointer', color: 'common.white' }}
+      {...rest}
     >
       {icon}
     </MuiLink>
