@@ -12,6 +12,8 @@ import { useTheme } from '@mui/material/styles';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
+import BackToTop from '../UI/BackToTop';
+
 import { AppBar, DrawerHeader, drawerWidth, Main } from './Drawer.styled';
 import NestedList from './NestedList';
 
@@ -53,6 +55,7 @@ const PersistentDrawerLeft = ({ children }: { children: React.ReactNode }) => {
           </RouterLink>
         </Toolbar>
       </AppBar>
+      <BackToTop />
       <Drawer
         sx={{
           width: drawerWidth,
@@ -79,7 +82,8 @@ const PersistentDrawerLeft = ({ children }: { children: React.ReactNode }) => {
         <NestedList />
       </Drawer>
       <Main open={open}>
-        <DrawerHeader />
+        {/* anchor for BackToTop */}
+        <DrawerHeader id="back-to-top-anchor" />
         {children}
       </Main>
     </Box>

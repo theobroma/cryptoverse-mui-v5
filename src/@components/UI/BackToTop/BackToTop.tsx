@@ -1,8 +1,10 @@
+import KeyboardArrowUp from '@mui/icons-material/KeyboardArrowUp';
 import Box from '@mui/material/Box';
+import Fab from '@mui/material/Fab';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Zoom from '@mui/material/Zoom';
 
-const BackToTop = ({ children }: any) => {
+const BackToTop = () => {
   const trigger = useScrollTrigger();
 
   const handleClick = (event: any) => {
@@ -25,7 +27,9 @@ const BackToTop = ({ children }: any) => {
         role="presentation"
         sx={{ position: 'fixed', bottom: 16, right: 16 }}
       >
-        {children}
+        <Fab color="secondary" size="large" aria-label="back to top">
+          <KeyboardArrowUp />
+        </Fab>
       </Box>
     </Zoom>
   );
