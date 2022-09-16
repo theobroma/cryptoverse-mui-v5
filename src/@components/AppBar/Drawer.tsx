@@ -1,23 +1,19 @@
 import * as React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
-import AutoGraphIcon from '@mui/icons-material/AutoGraph';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
-import HomeIcon from '@mui/icons-material/Home';
 import MenuIcon from '@mui/icons-material/Menu';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
 import { useTheme } from '@mui/material/styles';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
 import { AppBar, DrawerHeader, drawerWidth, Main } from './Drawer.styled';
-import ListItemLink from './ListItemLink';
+import NestedList from './NestedList';
 
 const PersistentDrawerLeft = ({ children }: { children: React.ReactNode }) => {
   const theme = useTheme();
@@ -80,19 +76,7 @@ const PersistentDrawerLeft = ({ children }: { children: React.ReactNode }) => {
           </IconButton>
         </DrawerHeader>
         <Divider />
-        <List aria-label="primary routes">
-          <ListItemLink to="/" primary="Home" icon={<HomeIcon />} />
-          <ListItemLink
-            to="/cryptocurrencies"
-            primary="Cryptocurrencies"
-            icon={<AutoGraphIcon />}
-          />
-          <ListItemLink
-            to="/exchanges"
-            primary="Exchanges"
-            icon={<CurrencyExchangeIcon />}
-          />
-        </List>
+        <NestedList />
       </Drawer>
       <Main open={open}>
         <DrawerHeader />
