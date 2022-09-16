@@ -2,9 +2,10 @@ import millify from 'millify';
 
 import { Box, Grid, Typography } from '@mui/material';
 
-import AppError from '../../@components/UI/AppError/AppError';
-import StatsBlock from '../../@components/UI/StatsBlock';
-import type { StatsType } from '../../@types';
+import AppError from '../../../@components/UI/AppError/AppError';
+import type { StatsType } from '../../../@types';
+
+import StatsBlock from './StatsBlock';
 
 type Props = {
   globalStats: StatsType;
