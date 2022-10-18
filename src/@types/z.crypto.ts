@@ -13,7 +13,7 @@ export type StatsType = z.infer<typeof StatsSchema>;
 
 const CoinSchema = z.object({
   uuid: z.string(),
-  symbol: z.string().min(3).max(10),
+  symbol: z.string().min(2).max(10),
   name: z.string(),
   color: z.string().min(4).max(9).regex(/^#/).nullable(),
   iconUrl: z.string().url(),
